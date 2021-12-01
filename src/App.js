@@ -8,9 +8,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save.
-          dajkfankfnaklnfalka
-          hafkhf
-          fajljal
+          abaabaaba
         </p>
         <a
           className="App-link"
