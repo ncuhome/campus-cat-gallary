@@ -5,7 +5,7 @@ function App() {
         
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://beta.reactjs.org/learn/your-first-component"
           target="_blank"
           rel="noopener noreferrer"
         >
