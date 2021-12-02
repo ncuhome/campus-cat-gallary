@@ -11,7 +11,6 @@ function App() {
           abaabaaba
           abaabaaba
           abaabaaba
-
         </p>
         <a
           className="App-link"
