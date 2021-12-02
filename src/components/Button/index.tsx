@@ -53,4 +53,3 @@ const Button: React.FC<Props> = ({ onPress, text, type = 'circle', showIcon = tr
 };
 
 export default Button;
-
