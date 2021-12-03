@@ -1,17 +1,17 @@
-function App() {
+import React from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+
+import Home from './pages/Home/home'
+import Login from './pages/Login/login'
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://beta.reactjs.org/learn/your-first-component"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+        <Routes>
+          <Route exact path="/" element={<Home/>}/>
+          <Route exact path="/login" element={<Login/>}/>
+        </Routes>
+    </Router>
   );
 }
 
