@@ -2,7 +2,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        
         <a
           className="App-link"
           href="https://beta.reactjs.org/learn/your-first-component"
