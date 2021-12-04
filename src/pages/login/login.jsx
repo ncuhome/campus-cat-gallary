@@ -6,11 +6,15 @@ function Login() {
     <div style={{
       display: 'flex',
       flexDirection: 'column',
-      width: 300
+      width: 250,
     }}>
-      <TextField label="Outlined secondary" color="secondary" focused />
+      <TextField label="账号" color="secondary" focused />
+      <TextField label="密码" color="secondary" focused />
       <Button>
-        Login
+        登录
+      </Button>
+      <Button>
+        没有账号？立即注册
       </Button>
     </div>
   );
