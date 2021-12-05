@@ -2,7 +2,6 @@ import React from 'react';
 import { TextField, Button } from '@material-ui/core'
 import axios from 'axios';
 
-
 function Login() {
 
   const [username, setusername] = React.useState('');
@@ -31,7 +30,7 @@ function Login() {
       url: 'https://v1.hitokoto.cn',
       data: {
         username: username,
-        password: password,
+        pwd: password,
       }
     })
     .then(res => {
