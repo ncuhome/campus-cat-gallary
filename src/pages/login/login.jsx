@@ -25,7 +25,7 @@ function Login() {
     }
 
     axios({
-      method: "get",
+      method: "post",
       url: "https://v1.hitokoto.cn",
       data: {
         username: username,
