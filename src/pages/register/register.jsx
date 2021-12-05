@@ -1,23 +1,29 @@
 import React from "react";
-import { TextField, Button } from "@mui/material";
+import { TextField, Button, Stack, Container, Typography } from "@mui/material";
 import axios from "axios";
+import isEmail from 'is-email'
+
 
 function Register() {
   const [username, setusername] = React.useState("");
   const [password, setpassword] = React.useState("");
   const [passwordrepeat, setpasswordrepeat] = React.useState("");
+  const [usernameError, setusernameError] = React.useState(false);
+  const [passwordError, setpasswordError] = React.useState(false);  
 
   const handleusernameChange = (event) => {
-    setusername(event.target.value);
+    const val = event.target.value
+    setusernameError(!isEmail(val))
+    setusername(val);
   };
 
   const handlepasswordChange = (event) => {
     setpassword(event.target.value);
   };
 
-  const handlepasswordrepeatChange = (event) => {
+  const rehandlepasswordChange = (event) => {
     setpasswordrepeat(event.target.value);
-  };
+  }
 
   const handleClick = () => {
     if (password !== passwordrepeat) {
@@ -33,40 +39,61 @@ function Register() {
       },
     }).then((res) => {
       console.log(res.data.example);
+      window.location.href = '/' 
     });
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        width: 250,
-      }}
-    >
-      <TextField
-        label="邮箱"
-        color="secondary"
-        focused
-        onChange={handleusernameChange}
-      />
-      <TextField
-        type="password"
-        label="密码"
-        color="secondary"
-        focused
-        onChange={handlepasswordChange}
-      />
-      <TextField
-        type="password"
-        label="确认密码"
-        color="secondary"
-        focused
-        onChange={handlepasswordrepeatChange}
-      />
-      <Button onClick={handleClick}>注册</Button>
-    </div>
+    <Container>
+      <Stack
+        sx={{
+          height: '100vh'
+        }}
+        spacing={2}
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Typography variant="h4"
+          sx={{ mb: 6 }}>
+          校园🐱
+        </Typography>
+        <TextField
+          error={usernameError}
+          label="邮箱"
+          onChange={handleusernameChange}
+          color="primary"
+          sx={{
+            width: '70%',
+            borderRadius: '16px',
+          }}
+        />
+        <TextField
+          error={passwordError}
+          label="密码"
+          color="primary"
+          onChange={handlepasswordChange}
+          sx={{
+            width: '70%'
+          }}
+        />
+        <TextField
+          error={passwordError}
+          label="确认密码"
+          color="primary"
+          onChange={rehandlepasswordChange}
+          sx={{
+            width: '70%'
+          }}
+        />
+        <Button variant="contained" color="primary" onClick={handleClick}
+          sx={{ width: '40%' }}
+        >注册
+        </Button>
+      </Stack>
+
+    </Container>
   );
 }
+
 
 export default Register;
