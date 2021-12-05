@@ -44,9 +44,9 @@ function Login() {
 
     axios({
       method: "post",
-      url: "https://v1.hitokoto.cn",
+      url: "https:47.103.210.738:7000/",
       data: {
-        username: username,
+        email: username,
         pwd: password,
       },
     }).then((res) => {

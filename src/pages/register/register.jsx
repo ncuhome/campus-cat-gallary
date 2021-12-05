@@ -1,19 +1,18 @@
 import React from "react";
 import { TextField, Button, Stack, Container, Typography } from "@mui/material";
 import axios from "axios";
-import isEmail from 'is-email'
-
+import isEmail from "is-email";
 
 function Register() {
   const [username, setusername] = React.useState("");
   const [password, setpassword] = React.useState("");
   const [passwordrepeat, setpasswordrepeat] = React.useState("");
   const [usernameError, setusernameError] = React.useState(false);
-  const [passwordError, setpasswordError] = React.useState(false);  
+  const [passwordError, setpasswordError] = React.useState(false);
 
   const handleusernameChange = (event) => {
-    const val = event.target.value
-    setusernameError(!isEmail(val))
+    const val = event.target.value;
+    setusernameError(!isEmail(val));
     setusername(val);
   };
 
@@ -23,7 +22,7 @@ function Register() {
 
   const rehandlepasswordChange = (event) => {
     setpasswordrepeat(event.target.value);
-  }
+  };
 
   const handleClick = () => {
     if (password !== passwordrepeat) {
@@ -39,7 +38,7 @@ function Register() {
       },
     }).then((res) => {
       console.log(res.data.example);
-      window.location.href = '/' 
+      window.location.href = "/";
     });
   };
 
@@ -47,14 +46,13 @@ function Register() {
     <Container>
       <Stack
         sx={{
-          height: '100vh'
+          height: "100vh",
         }}
         spacing={2}
         justifyContent="center"
         alignItems="center"
       >
-        <Typography variant="h4"
-          sx={{ mb: 6 }}>
+        <Typography variant="h4" sx={{ mb: 6 }}>
           校园🐱
         </Typography>
         <TextField
@@ -63,8 +61,8 @@ function Register() {
           onChange={handleusernameChange}
           color="primary"
           sx={{
-            width: '70%',
-            borderRadius: '16px',
+            width: "70%",
+            borderRadius: "16px",
           }}
         />
         <TextField
@@ -73,7 +71,7 @@ function Register() {
           color="primary"
           onChange={handlepasswordChange}
           sx={{
-            width: '70%'
+            width: "70%",
           }}
         />
         <TextField
@@ -82,18 +80,20 @@ function Register() {
           color="primary"
           onChange={rehandlepasswordChange}
           sx={{
-            width: '70%'
+            width: "70%",
           }}
         />
-        <Button variant="contained" color="primary" onClick={handleClick}
-          sx={{ width: '40%' }}
-        >注册
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleClick}
+          sx={{ width: "40%" }}
+        >
+          注册
         </Button>
       </Stack>
-
     </Container>
   );
 }
-
 
 export default Register;

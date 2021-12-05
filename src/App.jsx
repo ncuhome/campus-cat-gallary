@@ -5,20 +5,21 @@ import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
 import Home from "./pages/home/home";
 import Login from "./pages/login/login";
 import Register from "./pages/register/register";
+import Mine from "./pages/mine/mine";
 
 const theme = createTheme({
   palette: {
-    type: 'light',
+    type: "light",
     primary: {
-      main: '#cccccc',
+      main: "#cccccc",
     },
     secondary: {
-      main: '#c51162',
-      
+      main: "#c51162",
     },
   },
   shape: {
-    borderRadius: 16,}
+    borderRadius: 16,
+  },
 });
 
 const App = () => {
@@ -27,9 +28,10 @@ const App = () => {
       <CssBaseline />
       <Router>
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/home" element={<Home />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
+          <Route exact path="/mine" element={<Mine />} />
         </Routes>
       </Router>
     </ThemeProvider>
