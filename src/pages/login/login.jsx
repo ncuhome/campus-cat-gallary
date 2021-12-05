@@ -7,6 +7,7 @@ function Login() {
 
   const [username, setusername] = React.useState('');
   const [password, setpassword] = React.useState('');
+  const [hitokoto, sethitokoto] = React.useState('');
 
   const[usernameError,setusernameError]=React.useState(false)
   const[passwordError,setpasswordError]=React.useState(false)
@@ -26,15 +27,20 @@ function Login() {
     }
 
     axios({
-      method: 'post',
-      url: '/user/12345',
+      method: 'get',
+      url: 'https://v1.hitokoto.cn',
       data: {
         username: username,
         password: password,
       }
+    })
+    .then(res => {
+      console.log(res.data.hitokoto)
+      sethitokoto(res.data.hitokoto)
     });
     console.log(username,password)
   }
+
 
 
 
@@ -52,6 +58,7 @@ function Login() {
       <Button>
         没有账号？立即注册
       </Button>
+      {hitokoto.length === 0 ? "null" : hitokoto}
     </div>
   );
 }
