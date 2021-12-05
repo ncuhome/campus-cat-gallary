@@ -57,7 +57,7 @@ function Register() {
         </Typography>
         <TextField
           error={usernameError}
-          label="邮箱"
+          label="用户名（邮箱）"
           onChange={handleusernameChange}
           color="primary"
           sx={{
@@ -67,6 +67,7 @@ function Register() {
         />
         <TextField
           error={passwordError}
+          type="password"
           label="密码"
           color="primary"
           onChange={handlepasswordChange}
@@ -76,6 +77,7 @@ function Register() {
         />
         <TextField
           error={passwordError}
+          type="password"
           label="确认密码"
           color="primary"
           onChange={rehandlepasswordChange}

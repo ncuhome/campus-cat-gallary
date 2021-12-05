@@ -75,7 +75,7 @@ function Login() {
         </Typography>
         <TextField
           error={usernameError}
-          label="邮箱"
+          label="用户名（邮箱）"
           onChange={handleusernameChange}
           color="primary"
           sx={{

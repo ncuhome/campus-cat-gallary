@@ -28,23 +28,6 @@ const theme = createTheme({
   },
 });
 
-const App = () => {
-  return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Router>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/register" element={<Register />} />
-          <Route exact path="/mine" element={<Mine />} />
-        </Routes>
-      </Router>
-      <SimpleBottomNavigation></SimpleBottomNavigation>
-    </ThemeProvider>
-  );
-};
-
 const SimpleBottomNavigation = () => {
   const [value, setValue] = React.useState(0);
 
@@ -62,6 +45,23 @@ const SimpleBottomNavigation = () => {
         <BottomNavigationAction label="我的" icon={<PersonIcon />} />
       </BottomNavigation>
     </Box>
+  );
+};
+
+const App = () => {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/register" element={<Register />} />
+          <Route exact path="/mine" element={<Mine />} />
+        </Routes>
+      </Router>
+      <SimpleBottomNavigation></SimpleBottomNavigation>
+    </ThemeProvider>
   );
 };
 
