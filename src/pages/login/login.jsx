@@ -1,7 +1,7 @@
 import React from "react";
 import { TextField, Button, Stack, Container } from "@mui/material";
 import axios from "axios";
-import isEmail from 'is-email'
+import isEmail from "is-email";
 
 function Login() {
   const [username, setusername] = React.useState("");
@@ -12,13 +12,13 @@ function Login() {
   const [passwordError, setpasswordError] = React.useState(false);
 
   const handleusernameChange = (event) => {
-    const val = event.target.value
-    setusernameError(!isEmail(val))
+    const val = event.target.value;
+    setusernameError(!isEmail(val));
     setusername(val);
   };
 
   const handlepasswordChange = (event) => {
-    setpasswordError(false)
+    setpasswordError(false);
     setpassword(event.target.value);
   };
 
@@ -37,8 +37,7 @@ function Login() {
         pwd: password,
       },
     }).then((res) => {
-      console.log(res.data.hitokoto);
-      sethitokoto(res.data.hitokoto);
+      console.log(res.data.msg);
     });
     console.log(username, password);
   };
@@ -47,13 +46,12 @@ function Login() {
     <Container>
       <Stack
         sx={{
-          height: '100vh'
+          height: "100vh",
         }}
         spacing={2}
         justifyContent="center"
         alignItems="center"
       >
-
         <TextField
           error={usernameError}
           label="账号"
@@ -70,7 +68,6 @@ function Login() {
         <Button>没有账号？立即注册</Button>
         {hitokoto.length === 0 ? "null" : hitokoto}
       </Stack>
-
     </Container>
   );
 }
