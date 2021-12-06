@@ -59,7 +59,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-const RecipeReviewCard = () => {
+function RecipeReviewCard() {
   const [expanded, setExpanded] = React.useState(false);
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -78,7 +78,7 @@ const RecipeReviewCard = () => {
             <MoreVertIcon />
           </IconButton>
         }
-        title="dd"
+        title="title"
         subheader="September 14, 2016"
       />
       <CardMedia
@@ -113,15 +113,12 @@ const RecipeReviewCard = () => {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>Method:</Typography>
-          <Typography paragraph>
-            Heat 1/2 cup of the broth in a pot until simmering, add saffron and
-            set aside for 10 minutes.
-          </Typography>
+          <Typography paragraph>Heat 1/2 cup of the brot</Typography>
         </CardContent>
       </Collapse>
     </Card>
   );
-};
+}
 
 export default function Record() {
   return <RecipeReviewCard></RecipeReviewCard>;
