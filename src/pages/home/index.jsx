@@ -44,7 +44,7 @@ function Home() {
           {tab.map((item, index) => <BottomNavigationAction key={index} label={item.label} icon={item.icon} />)}
         </BottomNavigation>
       </Box>
-      <div style={{ overflowX: 'hidden' }}>
+      <div>
         {tab[currentTabIndex]?.component || '暂无'}
       </div>
     </div>
