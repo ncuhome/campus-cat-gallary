@@ -2,6 +2,12 @@ import styled from "styled-components";
 import { WaterfallGrid } from "react-waterfall-grid";
 import { useMediaQuery } from "react-responsive";
 
+import Box from "@mui/material/Box";
+import Fab from "@mui/material/Fab";
+import AddIcon from "@mui/icons-material/Add";
+import EditIcon from "@mui/icons-material/Edit";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import NavigationIcon from "@mui/icons-material/Navigation";
 // You are free to add as many grid contents as you want. Here, you see only 4 pictures.
 import Image1 from "../../../image/hack.png";
 import Image2 from "./2.png";
@@ -16,6 +22,15 @@ const ParentContainer = styled.div`
 const Image = styled.img`
   object-fit: cover;
 `;
+const FloatingActionButtons = () => {
+  return (
+    <Box sx={{ "& > :not(style)": { m: 1 } }}>
+      <Fab color="primary" aria-label="add">
+        <AddIcon />
+      </Fab>
+    </Box>
+  );
+};
 
 export default function App() {
   // Boolean - True if phone
@@ -32,7 +47,17 @@ export default function App() {
   ));
 
   return (
-    <box sx={{ overflow: "hidden", height: 1 }}>
+    <Box
+      sx={{
+        overflow: "hidden",
+        display: "inline",
+        zIndex: 1,
+        top: 0,
+        padding: 0,
+        width: "100%",
+        height: "100%",
+      }}
+    >
       <ParentContainer id="parent-container">
         <WaterfallGrid
           children={imagesList}
@@ -43,7 +68,12 @@ export default function App() {
             justifyContent: "center",
           }}
         />
+        <FloatingActionButtons
+          sx={{
+            bottom: 5,
+          }}
+        ></FloatingActionButtons>
       </ParentContainer>
-    </box>
+    </Box>
   );
 }
