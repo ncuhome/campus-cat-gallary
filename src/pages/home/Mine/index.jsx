@@ -6,9 +6,13 @@ import Stack from '@mui/material/Stack';
 export default function Mine() {
   return (
     <Box
-    sx={{ position: 'absolute', top: 40 ,left: '40%',}}>
-      <Stack>
-        <Avatar/>用户名
+    sx={{ position: 'absolute', top: 50 ,left: '10%',}}>
+      <Stack direction="row" spacing={2}>
+        <Avatar
+        src="./hack.png"
+        sx={{width: 56, height:56 }}
+        />
+        
       </Stack>
     </Box>
   );
