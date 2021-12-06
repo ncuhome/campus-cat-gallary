@@ -61,13 +61,12 @@ const ExpandMore = styled((props) => {
 
 const RecipeReviewCard = () => {
   const [expanded, setExpanded] = React.useState(false);
-
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, margin: "auto", marginTop: 2 }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -79,6 +78,7 @@ const RecipeReviewCard = () => {
             <MoreVertIcon />
           </IconButton>
         }
+        title="dd"
         subheader="September 14, 2016"
       />
       <CardMedia
