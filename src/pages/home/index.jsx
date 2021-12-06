@@ -19,12 +19,12 @@ const tab = [
     component: <Frontpage />,
   },
   {
-    label: "search",
+    label: "图鉴",
     icon: <GallaryIcon />,
     component: <Gallary />,
   },
   {
-    label: "tips",
+    label: "贴士",
     icon: <TipsIcon />,
     component: <Tips />,
   },
