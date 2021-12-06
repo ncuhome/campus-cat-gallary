@@ -32,17 +32,18 @@ export default function App() {
   ));
 
   return (
-    <ParentContainer id="parent-container">
-      <WaterfallGrid
-        children={imagesList}
-        childWidth={isPhone ? 200 : 300}
-        styleGridContainer={{
-          width: "100%",
-          position: "relative",
-          justifyContent: "center",
-          zIndex: 1,
-        }}
-      />
-    </ParentContainer>
+    <box sx={{ overflow: "hidden", height: 1 }}>
+      <ParentContainer id="parent-container">
+        <WaterfallGrid
+          children={imagesList}
+          childWidth={isPhone ? 200 : 300}
+          styleGridContainer={{
+            width: "100%",
+            position: "relative",
+            justifyContent: "center",
+          }}
+        />
+      </ParentContainer>
+    </box>
   );
 }
