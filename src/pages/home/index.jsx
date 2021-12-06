@@ -2,24 +2,31 @@ import React from "react";
 import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import SearchIcon from "@mui/icons-material/Search";
+import GallaryIcon from "@mui/icons-material/Book";
+import TipsIcon from "@mui/icons-material/TipsAndUpdates";
 import PersonIcon from "@mui/icons-material/Person";
 import HomeIcon from "@mui/icons-material/Home";
 
-import Record from "./Record/index";
+import Frontpage from "./Frontpage/index";
+import Tips from "./Tips/index";
 import Mine from "./Mine/index";
-import Search from "./Search/index";
+import Gallary from "./Gallary/index";
 
 const tab = [
   {
     label: "首页",
     icon: <HomeIcon />,
-    component: <Record />,
+    component: <Frontpage />,
   },
   {
     label: "search",
-    icon: <SearchIcon />,
-    component: <Search />,
+    icon: <GallaryIcon />,
+    component: <Gallary />,
+  },
+  {
+    label: "tips",
+    icon: <TipsIcon />,
+    component: <Tips />,
   },
   {
     label: "我的",

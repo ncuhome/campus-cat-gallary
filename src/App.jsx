@@ -2,11 +2,10 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
 
-
 import Home from "./pages/home";
 import Login from "./pages/login/login";
 import Register from "./pages/register/register";
-import Setting from "./pages/home/Mine/setting"
+import Setting from "./pages/home/Mine/setting";
 
 const theme = createTheme({
   palette: {
@@ -22,7 +21,6 @@ const theme = createTheme({
     borderRadius: 16,
   },
 });
-
 
 const App = () => {
   return (
