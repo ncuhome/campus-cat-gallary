@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { WaterfallGrid } from "react-waterfall-grid";
 import { useMediaQuery } from "react-responsive";
+import outbox from "./index.css";
 
 import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
@@ -47,17 +48,7 @@ export default function App() {
   ));
 
   return (
-    <Box
-      sx={{
-        overflow: "hidden",
-        display: "inline",
-        zIndex: 1,
-        top: 0,
-        padding: 0,
-        width: "100%",
-        height: "100%",
-      }}
-    >
+    <div class="outbox">
       <ParentContainer id="parent-container">
         <WaterfallGrid
           children={imagesList}
@@ -74,6 +65,6 @@ export default function App() {
           }}
         ></FloatingActionButtons>
       </ParentContainer>
-    </Box>
+    </div>
   );
 }
