@@ -1,0 +1,19 @@
+.back {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  left: 24px;
+  top: 24px;
+  
+}
+
+.center {
+  position: relative;
+  justify-content: center;
+  
+}
+
+.test {
+  display: flex;
+  justify-content: center;
+}
