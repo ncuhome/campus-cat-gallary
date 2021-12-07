@@ -1,4 +1,10 @@
 .outbox {
-  height: 1;
+  height: 812px;
   overflow-y: auto;
+}
+
+.addbtn {
+  position: absolute;
+  bottom: 64px;
+  right: 16px;
 }

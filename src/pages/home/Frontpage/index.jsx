@@ -1,11 +1,9 @@
 import styled from "styled-components";
 import { WaterfallGrid } from "react-waterfall-grid";
 import { useMediaQuery } from "react-responsive";
+import Addbutton from "../addbutton";
 import outbox from "./index.css";
 
-import Box from "@mui/material/Box";
-import Fab from "@mui/material/Fab";
-import AddIcon from "@mui/icons-material/Add";
 import EditIcon from "@mui/icons-material/Edit";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import NavigationIcon from "@mui/icons-material/Navigation";
@@ -23,15 +21,6 @@ const ParentContainer = styled.div`
 const Image = styled.img`
   object-fit: cover;
 `;
-const FloatingActionButtons = () => {
-  return (
-    <Box sx={{ "& > :not(style)": { m: 1 } }}>
-      <Fab color="primary" aria-label="add">
-        <AddIcon />
-      </Fab>
-    </Box>
-  );
-};
 
 export default function App() {
   // Boolean - True if phone
@@ -59,12 +48,10 @@ export default function App() {
             justifyContent: "center",
           }}
         />
-        <FloatingActionButtons
-          sx={{
-            bottom: 5,
-          }}
-        ></FloatingActionButtons>
       </ParentContainer>
+      <div class="addbtn">
+        <Addbutton></Addbutton>
+      </div>
     </div>
   );
 }
