@@ -4,7 +4,12 @@
 }
 
 .addbtn {
-  position: absolute;
-  bottom: 64px;
+  position: fixed;
+  bottom: 80px;
   right: 24px;
+}
+
+.swicher {
+  position: sticky;
+  height: 50px;
 }

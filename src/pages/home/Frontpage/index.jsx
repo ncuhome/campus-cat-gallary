@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { WaterfallGrid } from "react-waterfall-grid";
 import { useMediaQuery } from "react-responsive";
 import Addbutton from "../../../components/addbutton";
+import Appbar from "../../../components/appbar";
 import outbox from "./index.css";
 
 import EditIcon from "@mui/icons-material/Edit";
@@ -38,6 +39,9 @@ export default function App() {
 
   return (
     <div class="outbox">
+      <div className="swither">
+        <Appbar></Appbar>
+      </div>
       <ParentContainer id="parent-container">
         <WaterfallGrid
           children={imagesList}
