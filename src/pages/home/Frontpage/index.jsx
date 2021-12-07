@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { WaterfallGrid } from "react-waterfall-grid";
 import { useMediaQuery } from "react-responsive";
-import Addbutton from "../addbutton";
+import Addbutton from "../../../components/addbutton";
 import outbox from "./index.css";
 
 import EditIcon from "@mui/icons-material/Edit";
