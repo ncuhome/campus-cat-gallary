@@ -1,9 +1,17 @@
 import React from 'react';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import "./index.css";
+
 
 function Setting() {
   return (
-    <div>
-      Setting
+    <div className="back">
+      <div>
+      <ArrowBackIosIcon/>
+      </div>
+      <div className="center">
+       <a>设置</a>
+      </div>
     </div>
   );
 }
