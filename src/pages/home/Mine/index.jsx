@@ -7,9 +7,9 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/Inbox';
-import DraftsIcon from '@mui/icons-material/Drafts';
 import SettingsIcon from '@mui/icons-material/Settings';
+
+import "./index.css"
 
 const HandleClick = () => {
   console.log("跳转至设置页面");
@@ -18,7 +18,7 @@ const HandleClick = () => {
 
 export default function Mine() {
   return (
-    <Box >
+    <Box className="box">
       <Stack direction="row" spacing={2}>
         <Avatar
         src="./hack.png"
