@@ -1,19 +1,19 @@
-import React from 'react';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import React from "react";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import "./index.css";
 
 const handleClick = () => {
-  window.history.back()
-}
+  window.history.back();
+};
 
 function Setting() {
   return (
     <div className="back">
       <div onClick={handleClick}>
-      <ArrowBackIosIcon/>
+        <ArrowBackIosIcon />
       </div>
       <div className="center">
-       <a>设置</a>
+        <a>返回</a>
       </div>
     </div>
   );

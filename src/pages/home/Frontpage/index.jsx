@@ -7,8 +7,9 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Paper from "@mui/material/Paper";
 import Masonry from "@mui/lab/Masonry";
+import Addbuttton from "../../../components/addbutton";
 import { styled } from "@mui/material/styles";
-import Indexstyles from "./index.css";
+import "./index.css";
 
 const Label = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -79,6 +80,11 @@ let ImageMasonry = () => {
   );
 };
 
+const HandleClick = () => {
+  console.log("跳转至设置页面");
+  window.location.href = "/launch";
+};
+
 export default function BasicTabs() {
   const [value, setValue] = React.useState(0);
   const handleChange = (event, newValue) => {
@@ -96,6 +102,9 @@ export default function BasicTabs() {
           <Tab label="全部" {...a11yProps(0)} />
           <Tab label="NCU" {...a11yProps(1)} />
         </Tabs>
+      </Box>
+      <Box className="addbtn" onClick={HandleClick}>
+        <Addbuttton></Addbuttton>
       </Box>
       <Box>
         <TabPanel value={value} index={0}></TabPanel>

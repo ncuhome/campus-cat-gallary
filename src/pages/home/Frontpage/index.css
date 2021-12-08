@@ -17,7 +17,9 @@
 }
 
 .addbtn {
-  position: fixed;
+  position: absolute;
+  right: 16px;
+  bottom: 64px;
 }
 
 .swicher {
