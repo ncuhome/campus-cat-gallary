@@ -58,9 +58,6 @@ function a11yProps(index) {
 let ImageMasonry = () => {
   return (
     <Box className="outbox">
-      <div className="appbar">
-        <BasicTabs></BasicTabs>
-      </div>
       <Box className="mainbox">
         <Masonry columns={1} spacing={1}>
           {itemData.map((item, index) => (
@@ -68,7 +65,7 @@ let ImageMasonry = () => {
               <Label>{index + 1}</Label>
               <img
                 src={`${item.img}?w=162&auto=format`}
-                srcSet={`${item.img}?w=162&auto=format&dpr=2 2x`}
+                // srcSet={`${item.img}?w=162&auto=format&dpr=2 2x`}
                 alt={item.title}
                 loading="lazy"
               />
@@ -93,7 +90,7 @@ export default function BasicTabs() {
 
   return (
     <Box sx={{ width: "100%" }}>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+      <Box sx={{ borderBottom: 0, borderColor: "divider" }}>
         <Tabs
           value={value}
           onChange={handleChange}
@@ -107,7 +104,9 @@ export default function BasicTabs() {
         <Addbuttton></Addbuttton>
       </Box>
       <Box>
-        <TabPanel value={value} index={0}></TabPanel>
+        <TabPanel value={value} index={0}>
+          <ImageMasonry></ImageMasonry>
+        </TabPanel>
         <TabPanel value={value} index={1}>
           暂未开放
         </TabPanel>

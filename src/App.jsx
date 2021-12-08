@@ -6,6 +6,7 @@ import Home from "./pages/home";
 import Login from "./pages/login/login";
 import Register from "./pages/register/register";
 import Setting from "./pages/home/Mine/setting";
+import Launch from "./pages/home/Frontpage/launch";
 
 const theme = createTheme({
   palette: {
@@ -32,6 +33,7 @@ const App = () => {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/setting" element={<Setting />} />
+          <Route exact path="/launch" element={<Launch />} />
         </Routes>
       </Router>
     </ThemeProvider>
