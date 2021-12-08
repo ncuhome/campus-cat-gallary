@@ -1,15 +1,33 @@
 .outbox {
-  height: 812px;
-  overflow-y: auto;
+  position: fixed;
+  margin-bottom: 0px;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+
+.mainbox {
+  position: absolute;
+  margin-top: 50px;
+  width: 100%;
+  overflow: auto;
 }
 
 .addbtn {
   position: fixed;
-  bottom: 80px;
-  right: 24px;
 }
 
 .swicher {
   position: sticky;
   height: 50px;
+}
+.appbar {
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  background-color: aliceblue;
+  z-index: 99;
 }

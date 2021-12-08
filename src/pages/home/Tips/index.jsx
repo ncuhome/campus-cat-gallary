@@ -1,10 +1,9 @@
-import React from "react";
-import BasicTabs from "../../../components/basictabs";
+import React from 'react';
 
 function Tips() {
   return (
     <div>
-      <BasicTabs></BasicTabs>
+      Tips
     </div>
   );
 }

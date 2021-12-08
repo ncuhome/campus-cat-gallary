@@ -1,61 +1,119 @@
-import styled from "styled-components";
-import { WaterfallGrid } from "react-waterfall-grid";
-import { useMediaQuery } from "react-responsive";
-import Addbutton from "../../../components/addbutton";
-import Appbar from "../../../components/appbar";
-import outbox from "./index.css";
+import React from "react";
+import PropTypes from "prop-types";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import Paper from "@mui/material/Paper";
+import Masonry from "@mui/lab/Masonry";
+import { styled } from "@mui/material/styles";
+import Indexstyles from "./index.css";
 
-import EditIcon from "@mui/icons-material/Edit";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import NavigationIcon from "@mui/icons-material/Navigation";
-// You are free to add as many grid contents as you want. Here, you see only 4 pictures.
-import Image1 from "../../../image/hack.png";
-import Image2 from "./2.png";
-import Image3 from "./3.png";
-import Image4 from "./4.png";
+const Label = styled(Paper)(({ theme }) => ({
+  ...theme.typography.body2,
+  color: theme.palette.text.secondary,
+  border: "1px solid black",
+  borderBottomLeftRadius: 0,
+  borderBottomRightRadius: 0,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+}));
 
-const ParentContainer = styled.div`
-  width: 100%;
-  background-color: #121212;
-`;
-
-const Image = styled.img`
-  object-fit: cover;
-`;
-
-export default function App() {
-  // Boolean - True if phone
-  const isPhone = useMediaQuery({ query: "max-width: 480px" });
-
-  // List of images <img>
-  const imagesList = [Image1, Image2, Image3, Image4].map((imagePath) => (
-    <Image
-      key={imagePath}
-      style={{ width: isPhone ? "200px" : "300px" }}
-      src={imagePath}
-      alt={imagePath}
-    />
-  ));
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
 
   return (
-    <div class="outbox">
-      <div className="swither">
-        <Appbar></Appbar>
-      </div>
-      <ParentContainer id="parent-container">
-        <WaterfallGrid
-          children={imagesList}
-          childWidth={isPhone ? 200 : 300}
-          styleGridContainer={{
-            width: "100%",
-            position: "relative",
-            justifyContent: "center",
-          }}
-        />
-      </ParentContainer>
-      <div class="addbtn">
-        <Addbutton></Addbutton>
-      </div>
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box sx={{ p: 3 }}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
     </div>
   );
 }
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+};
+
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
+  };
+}
+
+let ImageMasonry = () => {
+  return (
+    <Box className="outbox">
+      <div className="appbar">
+        <BasicTabs></BasicTabs>
+      </div>
+      <Box className="mainbox">
+        <Masonry columns={1} spacing={1}>
+          {itemData.map((item, index) => (
+            <Stack key={index}>
+              <Label>{index + 1}</Label>
+              <img
+                src={`${item.img}?w=162&auto=format`}
+                srcSet={`${item.img}?w=162&auto=format&dpr=2 2x`}
+                alt={item.title}
+                loading="lazy"
+              />
+            </Stack>
+          ))}
+        </Masonry>
+      </Box>
+    </Box>
+  );
+};
+
+export default function BasicTabs() {
+  const [value, setValue] = React.useState(0);
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <Box sx={{ width: "100%" }}>
+      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="basic tabs example"
+        >
+          <Tab label="全部" {...a11yProps(0)} />
+          <Tab label="NCU" {...a11yProps(1)} />
+        </Tabs>
+      </Box>
+      <Box>
+        <TabPanel value={value} index={0}></TabPanel>
+        <TabPanel value={value} index={1}>
+          暂未开放
+        </TabPanel>
+      </Box>
+    </Box>
+  );
+}
+
+const itemData = [
+  {
+    img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
+    title: "Fern",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1627308595229-7830a5c91f9f",
+    title: "Snacks",
+  },
+];

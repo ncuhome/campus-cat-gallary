@@ -43,8 +43,8 @@ function Login() {
     }
 
     axios({
-      method: "post",
-      url: "https:47.103.210.738:7000/",
+      method: "get",
+      url: "https:47.103.210.124:7000/user/login",
       data: {
         email: username,
         pwd: password,
@@ -52,7 +52,6 @@ function Login() {
     }).then((res) => {
       console.log(res.data.msg);
     });
-    console.log(username, password);
   };
 
   const handleRegister = () => {
