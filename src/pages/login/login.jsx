@@ -10,9 +10,8 @@ import {
 import axios from "axios";
 import isEmail from "is-email";
 
-import api from "../../api/index";
-import cookie from 'react-cookies'
-
+// import api from "../../api/index";
+// import cookie from 'react-cookies'
 
 const MyButton = styled(Button)({
   "&": {
