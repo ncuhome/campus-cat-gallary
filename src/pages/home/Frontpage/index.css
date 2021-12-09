@@ -1,20 +1,17 @@
 .outbox {
   position: fixed;
-  margin-bottom: 0px;
+  margin: 0px;
   height: 100%;
   width: 100%;
   overflow: auto;
-  align-items: center;
-  justify-content: center;
   z-index: 0;
 }
 
-.mainbox {
+/* .mainbox {
   position: absolute;
-  margin-top: 50px;
   width: 100%;
   overflow: auto;
-}
+} */
 
 .addbtn {
   position: absolute;
@@ -31,6 +28,10 @@
   position: fixed;
   height: 50px;
   width: 100%;
-  background-color: aliceblue;
+  background-color: rgb(185, 209, 230);
   z-index: 99;
+}
+
+.flow {
+  margin: 0;
 }

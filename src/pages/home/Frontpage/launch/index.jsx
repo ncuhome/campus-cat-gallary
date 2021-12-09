@@ -6,6 +6,7 @@ import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
+import "./index.css";
 
 const Input = styled("input")({
   display: "none",
@@ -34,7 +35,7 @@ const MultilineTextFields = () => {
 
 export default function Launch() {
   return (
-    <Box>
+    <Box sx={{ width: 100, margin: "auto" }}>
       <Box>
         <MultilineTextFields></MultilineTextFields>
       </Box>
@@ -48,7 +49,7 @@ export default function Launch() {
               type="file"
             />
             <Button variant="contained" component="span">
-              Upload
+              上传图片
             </Button>
           </label>
         </Stack>

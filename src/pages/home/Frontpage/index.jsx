@@ -4,6 +4,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import "./1.png";
 import Stack from "@mui/material/Stack";
 import Paper from "@mui/material/Paper";
 import Masonry from "@mui/lab/Masonry";
@@ -55,27 +56,98 @@ function a11yProps(index) {
   };
 }
 
-let ImageMasonry = () => {
+const ImageMasonry = () => {
   return (
-    <Box className="outbox">
-      <Box className="mainbox">
-        <Masonry columns={1} spacing={1}>
-          {itemData.map((item, index) => (
-            <Stack key={index}>
-              <Label>{index + 1}</Label>
-              <img
-                src={`${item.img}?w=162&auto=format`}
-                // srcSet={`${item.img}?w=162&auto=format&dpr=2 2x`}
-                alt={item.title}
-                loading="lazy"
-              />
-            </Stack>
-          ))}
-        </Masonry>
-      </Box>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: { xs: "column", md: "row" },
+        alignItems: "left",
+        bgcolor: "background.paper",
+        overflow: "hidden",
+        borderRadius: "16px",
+        boxShadow: 0,
+        fontWeight: "bold",
+        padding: "0",
+      }}
+    >
+      <header>
+        <Box
+          sx={{
+            height: "56px",
+            alignItems: "center",
+            display: "flex",
+            flexDirection: "row",
+          }}
+        >
+          <Box
+            component="img"
+            sx={{
+              height: 40,
+              width: 40,
+              borderRadius: 100,
+              display: "block",
+            }}
+            alt="The house from the offer."
+            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&w=350&dpr=2"
+          />
+          <Box
+            sx={{
+              // alignItems: { xs: "center", md: "flex-start" },
+              m: 0,
+              margin: "8px",
+              minWidth: { md: 350 },
+            }}
+          >
+            username
+          </Box>
+        </Box>
+        <Box>say something ...</Box>
+      </header>
+      <main>
+        <Box>dynamic display images</Box>
+      </main>
+      <footer>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            height: 40,
+          }}
+        >
+          <Box>
+            <button>liked</button>
+          </Box>
+          <Box>
+            <button>comment</button>
+          </Box>
+        </Box>
+      </footer>
     </Box>
   );
 };
+
+// let ImageMasonry = () => {
+//   return (
+//     <Box className="outbox">
+//       <Box className="mainbox">
+//         <Masonry columns={1} spacing={1}>
+//           {itemData.map((item, index) => (
+//             <Stack key={index}>
+//               <Label>{index + 1}</Label>
+//               <img
+//                 src={`${item.img}?w=162&auto=format`}
+//                 // srcSet={`${item.img}?w=162&auto=format&dpr=2 2x`}
+//                 alt={item.title}
+//                 loading="lazy"
+//               />
+//             </Stack>
+//           ))}
+//         </Masonry>
+//       </Box>
+//     </Box>
+//   );
+// };
 
 const HandleClick = () => {
   console.log("跳转至设置页面");
@@ -100,16 +172,18 @@ export default function BasicTabs() {
           <Tab label="NCU" {...a11yProps(1)} />
         </Tabs>
       </Box>
-      <Box className="addbtn" onClick={HandleClick}>
-        <Addbuttton></Addbuttton>
-      </Box>
+
       <Box>
         <TabPanel value={value} index={0}>
+          <ImageMasonry></ImageMasonry>
           <ImageMasonry></ImageMasonry>
         </TabPanel>
         <TabPanel value={value} index={1}>
           暂未开放
         </TabPanel>
+      </Box>
+      <Box onClick={HandleClick}>
+        <Addbuttton></Addbuttton>
       </Box>
     </Box>
   );
@@ -119,6 +193,14 @@ const itemData = [
   {
     img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
     title: "Fern",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1627308595229-7830a5c91f9f",
+    title: "Snacks",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1627308595229-7830a5c91f9f",
+    title: "Snacks",
   },
   {
     img: "https://images.unsplash.com/photo-1627308595229-7830a5c91f9f",
