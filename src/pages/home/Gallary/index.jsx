@@ -1,10 +1,11 @@
 import React from 'react';
+import Postcard from '../../../components/postcard/index'
 
 function Gallary() {
   return (
-    <div>
-      Gallary
-    </div>
+    <><div>
+      awd
+    </div><Postcard> </Postcard></>
   );
 }
 
