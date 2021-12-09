@@ -2,10 +2,12 @@
 import codes from './statecode.js';   //状态码
 import login from './login.js'; 
 import register from './register.js';   //登录页面
-import postcard from './postcard.js';   //产品页面
+import postcard from './postcard.js';   //主页的帖子
  
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
     statecode: codes,
     ...login,
+    ...register,
+    ...postcard,
 }

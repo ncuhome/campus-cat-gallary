@@ -123,7 +123,7 @@ function Login() {
         <MyButton
           variant="contained"
           color="primary"
-          onClick={handleLogin}
+          onClick={handleClick}
           sx={{ width: "40%" }}
         >
           登录
