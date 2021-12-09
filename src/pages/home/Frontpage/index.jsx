@@ -5,12 +5,11 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import "./1.png";
-import Stack from "@mui/material/Stack";
 import Paper from "@mui/material/Paper";
-import Masonry from "@mui/lab/Masonry";
 import Addbuttton from "../../../components/addbutton";
 import { styled } from "@mui/material/styles";
 import "./index.css";
+import "./data";
 import { Button } from "@mui/material";
 
 const Label = styled(Paper)(({ theme }) => ({
@@ -58,25 +57,6 @@ function a11yProps(index) {
 }
 
 const ImageMasonry = () => {
-  const waterfall = [
-    {
-      img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
-      title: "Fern",
-    },
-    {
-      img: "https://images.unsplash.com/photo-1627308595229-7830a5c91f9f",
-      title: "Snacks",
-    },
-    {
-      img: "https://images.unsplash.com/photo-1627308595229-7830a5c91f9f",
-      title: "Snacks",
-    },
-    {
-      img: "https://images.unsplash.com/photo-1627308595229-7830a5c91f9f",
-      title: "Snacks",
-    },
-  ];
-
   return (
     <Box
       sx={{
@@ -126,14 +106,7 @@ const ImageMasonry = () => {
         <Box>say something ...</Box>
       </header>
       <main>
-        <Box>
-          {waterfall.map(image=>{
-            return(
-              
-            )
-          } )}
-          dynamic display images
-        </Box>
+        <Box>dynamic display images</Box>
       </main>
       <footer>
         <Box
