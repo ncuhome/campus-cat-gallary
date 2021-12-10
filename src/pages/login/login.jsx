@@ -13,8 +13,10 @@ import isEmail from "is-email";
 import api from "../../api/index";
 import cookie from 'react-cookies'
 
+import Background from "../../image/background.png"
+
 const state = {
-    loginpost: {
+  loginpost: {
     username: "",
     password: "",
   }
@@ -83,13 +85,22 @@ function Login() {
     });
   };
 
+  const backgroundStyle = {
+    backgroundSize: "contain" ,
+    width: "100%",
+    height: "100%",
+    backgroundImage: `url(${Background})`,
+  }
+
   const handleRegister = () => {
     console.log("!!!ZHUCE");
     window.location.href = "/register";
   };
 
   return (
-    <Container>
+    <div style={backgroundStyle}>
+    <Container> 
+      
       <Stack
         sx={{
           height: "100vh",
@@ -120,17 +131,19 @@ function Login() {
             width: "70%",
           }}
         />
-        <MyButton
+        <Button
           variant="contained"
+          disableElevation
           color="primary"
           onClick={handleClick}
           sx={{ width: "40%" }}
-        >
+          >
           登录
-        </MyButton>
+        </Button>
         <Button onClick={handleRegister}>没有账号？立即注册</Button>
       </Stack>
     </Container>
+    </div>
   );
 }
 
