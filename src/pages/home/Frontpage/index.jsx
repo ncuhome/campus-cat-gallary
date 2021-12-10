@@ -69,7 +69,7 @@ const ImageMasonry = () => {
         boxShadow: 0,
         fontWeight: "medium",
         padding: "0",
-        marginBottom: "16px",
+        marginBottom: 4,
       }}
     >
       <header>
@@ -99,7 +99,7 @@ const ImageMasonry = () => {
               minWidth: { md: 350 },
             }}
           >
-            username
+            <div>{person.name}</div>
           </Box>
         </Box>
         <Box>say something ...</Box>
@@ -118,7 +118,7 @@ const ImageMasonry = () => {
             height: 40,
           }}
         >
-          <Box>
+          <Box sx={{ alignItems: "center" }}>
             <Button sx={{ border: 1, width: "48px", height: "32px" }}>
               喜欢😍
             </Button>
