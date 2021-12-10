@@ -8,6 +8,8 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import SettingsIcon from "@mui/icons-material/Settings";
+import MaomaoImg from '../../../image/maomao.png'
+import BackgroundImg from '../../../image/backgroundMaomao.png'
 
 import "./index.css";
 
@@ -16,36 +18,45 @@ const HandleClick = () => {
   window.location.href = "/setting";
 };
 
+const backgroundStyle = {
+  backgroundSize: "cover" ,
+  backgroundPosition: "center",
+  width: "375px",
+  height: "812px",
+  backgroundImage: `url(${BackgroundImg})`,
+}
+
 export default function Mine() {
   return (
-    <Box className="box">
-      <Stack direction="row" spacing={2}>
-        <Avatar
-          src="./hack.png"
-          sizes="56"
-          sx={{ width: 56, height: 56, top: 50, left: "10%" }}
-        />
-      </Stack>
-      <nav aria-label="main mailbox folders">
-        <List sx={{ top: 128 }}>
-          <ListItem>
-            <ListItemButton>
-              <ListItemIcon>
-                <SettingsIcon />
-              </ListItemIcon>
-              <ListItemText primary="我的消息" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem>
-            <ListItemButton onClick={HandleClick}>
-              <ListItemIcon>
-                <SettingsIcon />
-              </ListItemIcon>
-              <ListItemText primary="设置" />
-            </ListItemButton>
-          </ListItem>
-        </List>
-      </nav>
-    </Box>
+    <div style={backgroundStyle}>
+      <Box className="box">
+        <Stack direction="row" spacing={2}>
+          <Avatar
+            src={MaomaoImg }
+            sx={{ width: 160, height: 160, top: 80, margin: '0 auto'}}
+          />
+        </Stack>
+        <nav aria-label="main mailbox folders">
+          <List sx={{ top: 128 }}>
+            <ListItem>
+              <ListItemButton>
+                <ListItemIcon>
+                  <SettingsIcon />
+                </ListItemIcon>
+                <ListItemText primary="我的消息" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem>
+              <ListItemButton onClick={HandleClick}>
+                <ListItemIcon>
+                  <SettingsIcon />
+                </ListItemIcon>
+                <ListItemText primary="设置" />
+              </ListItemButton>
+            </ListItem>
+          </List>
+        </nav>
+      </Box>
+    </div>
   );
 }
