@@ -5,12 +5,12 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import "./1.png";
-import Stack from "@mui/material/Stack";
 import Paper from "@mui/material/Paper";
-import Masonry from "@mui/lab/Masonry";
 import Addbuttton from "../../../components/addbutton";
 import { styled } from "@mui/material/styles";
 import "./index.css";
+import "./data";
+import { Button } from "@mui/material";
 
 const Label = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -69,6 +69,7 @@ const ImageMasonry = () => {
         boxShadow: 0,
         fontWeight: "bold",
         padding: "0",
+        marginBottom: "16px",
       }}
     >
       <header>
@@ -112,14 +113,17 @@ const ImageMasonry = () => {
           sx={{
             display: "flex",
             justifyContent: "space-between",
+            alignItems: "center",
             height: 40,
           }}
         >
           <Box>
-            <button>liked</button>
+            <Button sx={{ border: 1, width: "48px", height: "32px" }}>
+              喜欢😍
+            </Button>
           </Box>
           <Box>
-            <button>comment</button>
+            <Button>评论</Button>
           </Box>
         </Box>
       </footer>
@@ -182,28 +186,9 @@ export default function BasicTabs() {
           暂未开放
         </TabPanel>
       </Box>
-      <Box onClick={HandleClick}>
+      <Box className="addbtn" onClick={HandleClick}>
         <Addbuttton></Addbuttton>
       </Box>
     </Box>
   );
 }
-
-const itemData = [
-  {
-    img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
-    title: "Fern",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1627308595229-7830a5c91f9f",
-    title: "Snacks",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1627308595229-7830a5c91f9f",
-    title: "Snacks",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1627308595229-7830a5c91f9f",
-    title: "Snacks",
-  },
-];
