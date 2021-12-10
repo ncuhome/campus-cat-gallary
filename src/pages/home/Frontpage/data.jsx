@@ -1,4 +1,4 @@
-export const Data = [
+export const data = [
   {
     img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
     title: "Fern",

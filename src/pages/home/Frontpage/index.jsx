@@ -9,7 +9,7 @@ import Paper from "@mui/material/Paper";
 import Addbuttton from "../../../components/addbutton";
 import { styled } from "@mui/material/styles";
 import "./index.css";
-import "./data";
+import { data } from "./data";
 import { Button } from "@mui/material";
 
 const Label = styled(Paper)(({ theme }) => ({
@@ -57,7 +57,7 @@ function a11yProps(index) {
 }
 
 const ImageMasonry = () => {
-  return (
+  const profile = data.map((person) => (
     <Box
       sx={{
         display: "flex",
@@ -67,7 +67,7 @@ const ImageMasonry = () => {
         overflow: "hidden",
         borderRadius: "16px",
         boxShadow: 0,
-        fontWeight: "bold",
+        fontWeight: "medium",
         padding: "0",
         marginBottom: "16px",
       }}
@@ -89,7 +89,6 @@ const ImageMasonry = () => {
               borderRadius: 100,
               display: "block",
             }}
-            alt="The house from the offer."
             src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&w=350&dpr=2"
           />
           <Box
@@ -106,7 +105,9 @@ const ImageMasonry = () => {
         <Box>say something ...</Box>
       </header>
       <main>
-        <Box>dynamic display images</Box>
+        <Box>
+          <img src={person.img} style={{ width: "100%" }} />
+        </Box>
       </main>
       <footer>
         <Box
@@ -128,30 +129,9 @@ const ImageMasonry = () => {
         </Box>
       </footer>
     </Box>
-  );
+  ));
+  return <Box>{profile}</Box>;
 };
-
-// let ImageMasonry = () => {
-//   return (
-//     <Box className="outbox">
-//       <Box className="mainbox">
-//         <Masonry columns={1} spacing={1}>
-//           {itemData.map((item, index) => (
-//             <Stack key={index}>
-//               <Label>{index + 1}</Label>
-//               <img
-//                 src={`${item.img}?w=162&auto=format`}
-//                 // srcSet={`${item.img}?w=162&auto=format&dpr=2 2x`}
-//                 alt={item.title}
-//                 loading="lazy"
-//               />
-//             </Stack>
-//           ))}
-//         </Masonry>
-//       </Box>
-//     </Box>
-//   );
-// };
 
 const HandleClick = () => {
   console.log("跳转至设置页面");
@@ -166,7 +146,16 @@ export default function BasicTabs() {
 
   return (
     <Box sx={{ width: "100%" }}>
-      <Box sx={{ borderBottom: 0, borderColor: "divider" }}>
+      <Box
+        sx={{
+          borderBottom: 0,
+          borderColor: "divider",
+          position: "fixed",
+          bgcolor: "white",
+          width: "100%",
+          zIndex: 999,
+        }}
+      >
         <Tabs
           value={value}
           onChange={handleChange}
@@ -177,7 +166,7 @@ export default function BasicTabs() {
         </Tabs>
       </Box>
 
-      <Box>
+      <Box sx={{ pt: 4 }}>
         <TabPanel value={value} index={0}>
           <ImageMasonry></ImageMasonry>
           <ImageMasonry></ImageMasonry>

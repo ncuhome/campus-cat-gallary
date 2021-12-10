@@ -49,7 +49,7 @@ function Home() {
       }}
     >
       <Box
-        sx={{ position: "absolute", bottom: 0, left: 0, right: 0, zIndex: 999 }}
+        sx={{ position: "fixed", bottom: 0, left: 0, right: 0, zIndex: 999 }}
       >
         <BottomNavigation
           showLabels
