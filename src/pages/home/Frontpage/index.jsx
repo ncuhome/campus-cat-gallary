@@ -11,6 +11,7 @@ import { styled } from "@mui/material/styles";
 import "./index.css";
 import "./data";
 import { Button } from "@mui/material";
+// import { boxShadow } from '@mui/system';
 
 const Label = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -186,7 +187,7 @@ export default function BasicTabs() {
           暂未开放
         </TabPanel>
       </Box>
-      <Box className="addbtn" onClick={HandleClick}>
+      <Box className="addbtn" onClick={HandleClick} sx={{boxShadow: 0}}>
         <Addbuttton></Addbuttton>
       </Box>
     </Box>
