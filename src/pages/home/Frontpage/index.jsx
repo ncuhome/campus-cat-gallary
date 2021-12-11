@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -69,7 +70,7 @@ const ImageMasonry = () => {
         boxShadow: 0,
         fontWeight: "medium",
         padding: "0",
-        marginBottom: 4,
+        marginBottom: 3,
       }}
     >
       <header>
@@ -79,28 +80,37 @@ const ImageMasonry = () => {
             alignItems: "center",
             display: "flex",
             flexDirection: "row",
+            justifyContent: "space-between",
           }}
         >
           <Box
-            component="img"
             sx={{
-              height: 40,
-              width: 40,
-              borderRadius: 100,
-              display: "block",
-            }}
-            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&w=350&dpr=2"
-          />
-          <Box
-            sx={{
-              // alignItems: { xs: "center", md: "flex-start" },
-              m: 0,
-              margin: "8px",
-              minWidth: { md: 350 },
+              display: "flex",
+              width: "100%",
             }}
           >
-            <div>{person.name}</div>
+            <Box
+              component="img"
+              sx={{
+                height: 40,
+                width: 40,
+                borderRadius: 100,
+                display: "block",
+              }}
+              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&w=350&dpr=2"
+            />
+            <Box
+              sx={{
+                // alignItems: { xs: "center", md: "flex-start" },
+                m: 0,
+                margin: "8px",
+                minWidth: { md: 350 },
+              }}
+            >
+              <div>{person.name}</div>
+            </Box>
           </Box>
+          <Box sx={{ color: "#999999" }}>{person.time}</Box>
         </Box>
         <Box>say something ...</Box>
       </header>
@@ -119,8 +129,11 @@ const ImageMasonry = () => {
           }}
         >
           <Box sx={{ alignItems: "center" }}>
-            <Button sx={{ border: 1, width: "48px", height: "32px" }}>
-              喜欢😍
+            <Button
+              sx={{ border: 1, width: "80px", height: "32px" }}
+              // onClick={handlekLikedButtonClick}
+            >
+              {person.liked == "true" ? "已点赞" : "点赞🎉"}
             </Button>
           </Box>
           <Box>
