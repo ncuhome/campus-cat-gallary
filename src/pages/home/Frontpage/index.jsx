@@ -10,7 +10,7 @@ import Paper from "@mui/material/Paper";
 import Addbuttton from "../../../components/addbutton";
 import { styled } from "@mui/material/styles";
 import "./index.css";
-import { data } from "./data";
+import data from "./data.json";
 import { Button } from "@mui/material";
 
 const Label = styled(Paper)(({ theme }) => ({
@@ -58,7 +58,14 @@ function a11yProps(index) {
 }
 
 const ImageMasonry = () => {
-  const profile = data.map((person) => (
+  const [liked, setLiked] = useState(data.data.liked);
+  // function handleLikebuttonclick() {
+  //   setLiked(!liked)
+  // }
+  const handleLikeButtonClick = () => {
+    setLiked(!liked);
+  };
+  const profile = data.data.map((person) => (
     <Box
       sx={{
         display: "flex",
@@ -97,7 +104,7 @@ const ImageMasonry = () => {
                 borderRadius: 100,
                 display: "block",
               }}
-              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&w=350&dpr=2"
+              src={person.icon}
             />
             <Box
               sx={{
@@ -107,12 +114,12 @@ const ImageMasonry = () => {
                 minWidth: { md: 350 },
               }}
             >
-              <div>{person.name}</div>
+              <div>{person.username}</div>
             </Box>
           </Box>
-          <Box sx={{ color: "#999999" }}>{person.time}</Box>
+          <Box sx={{ color: "#999999" }}>{person.CreatedAt.substr(11, 5)}</Box>
         </Box>
-        <Box>say something ...</Box>
+        <Box>{person.msg}</Box>
       </header>
       <main>
         <Box>
@@ -131,9 +138,9 @@ const ImageMasonry = () => {
           <Box sx={{ alignItems: "center" }}>
             <Button
               sx={{ border: 1, width: "80px", height: "32px" }}
-              // onClick={handlekLikedButtonClick}
+              onClick={handleLikeButtonClick}
             >
-              {person.liked == "true" ? "已点赞" : "点赞🎉"}
+              {liked === true ? "已点赞" : "点赞🎉"}
             </Button>
           </Box>
           <Box>
