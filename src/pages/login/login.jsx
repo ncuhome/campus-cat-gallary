@@ -13,7 +13,7 @@ import isEmail from "is-email";
 import api from "../../api/index";
 import cookie from "react-cookies";
 
-import Background from "../../image/background.png"
+import LoginBackground from "../../image/login.png"
 
 const state = {
   loginpost: {
@@ -88,7 +88,7 @@ function Login() {
     backgroundSize: "cover" ,
     width: "100%",
     height: "100%",
-    backgroundImage: `url(${Background})`,
+    backgroundImage: `url(${LoginBackground})`,
   }
 
   const handleRegister = () => {
@@ -108,8 +108,8 @@ function Login() {
         justifyContent="center"
         alignItems="center"
       >
-        <Typography variant="h4" sx={{ mb: 6 }}>
-          校园🐱
+        <Typography variant="h5" sx={{ mb: 6 }}>
+          校园猫咪录
         </Typography>
         <TextField
           error={usernameError}

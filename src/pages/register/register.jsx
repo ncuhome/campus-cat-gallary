@@ -3,6 +3,17 @@ import { TextField, Button, Stack, Container, Typography } from "@mui/material";
 import axios from "axios";
 import isEmail from "is-email";
 
+import RegisterBackground from "../../image/login.png"
+
+
+const backgroundStyle = {
+  backgroundSize: "cover" ,
+  width: "100%",
+  height: "100%",
+  backgroundImage: `url(${RegisterBackground})`,
+}
+
+
 function Register() {
   const [username, setusername] = React.useState("");
   const [password, setpassword] = React.useState("");
@@ -31,7 +42,7 @@ function Register() {
     }
     axios({
       method: "post",
-      url: "",
+      url: "47.103.210.124:7000/user/register",
       data: {
         username: username,
         pwd: password,
@@ -43,6 +54,7 @@ function Register() {
   };
 
   return (
+    <div style={backgroundStyle}>
     <Container>
       <Stack
         sx={{
@@ -52,8 +64,8 @@ function Register() {
         justifyContent="center"
         alignItems="center"
       >
-        <Typography variant="h4" sx={{ mb: 6 }}>
-          校园🐱
+        <Typography variant="h5" sx={{ mb: 6 }}>
+          校园猫咪录
         </Typography>
         <TextField
           error={usernameError}
@@ -95,6 +107,7 @@ function Register() {
         </Button>
       </Stack>
     </Container>
+    </div>
   );
 }
 
