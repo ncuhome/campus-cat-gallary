@@ -1,16 +1,16 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import axios from "axios";
 import "./1.png";
 import Paper from "@mui/material/Paper";
 import Addbuttton from "../../../components/addbutton";
 import { styled } from "@mui/material/styles";
 import "./index.css";
-import data from "./data.json";
 import { Button } from "@mui/material";
 // import { boxShadow } from '@mui/system';
 
@@ -59,14 +59,31 @@ function a11yProps(index) {
 }
 
 const ImageMasonry = () => {
-  const [liked, setLiked] = useState(data.data.liked);
+  const [data, setData] = useState([]);
+  const [liked, setLiked] = useState(data.liked);
+  const handleRefresh = () => {
+    // 获取远端图片
+    axios({
+      method: "get",
+      url: "http://47.103.210.124:7000/user/viewShare",
+      responseType: "stream",
+    }).then(function (response) {
+      console.log(response.data.shares);
+      setData(response.data.shares);
+    });
+  };
   // function handleLikebuttonclick() {
   //   setLiked(!liked)
   // }
-  const handleLikeButtonClick = () => {
+  // 页面加载完成时
+  useEffect(() => {
+    console.log("load done");
+    handleRefresh();
+  }, []);
+  const handleLikeButtonClick = (item) => {
     setLiked(!liked);
   };
-  const profile = data.data.map((person) => (
+  const profile = data.map((person) => (
     <Box
       sx={{
         display: "flex",
