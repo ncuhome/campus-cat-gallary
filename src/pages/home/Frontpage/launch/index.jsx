@@ -1,8 +1,7 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import PhotoCamera from "@mui/icons-material/PhotoCamera";
+import axios from "axios";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
@@ -33,6 +32,13 @@ const MultilineTextFields = () => {
   );
 };
 
+const handleUploadImage = (event) => {
+  console.log(event.target.files);
+  const formData = new FormData();
+  formData.append("file", event.target.files[0], event.target.files[0].name);
+  // axios.put(url, formData);
+};
+
 export default function Launch() {
   return (
     <Box sx={{ width: 100, margin: "auto" }}>
@@ -47,6 +53,7 @@ export default function Launch() {
               id="contained-button-file"
               multiple
               type="file"
+              onChange={handleUploadImage}
             />
             <Button variant="contained" component="span">
               上传图片

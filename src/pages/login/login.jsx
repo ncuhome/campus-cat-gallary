@@ -9,11 +9,10 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import isEmail from "is-email";
-
 import api from "../../api/index";
 import cookie from "react-cookies";
 
-import LoginBackground from "../../image/login.png"
+import LoginBackground from "../../image/login.png";
 
 const state = {
   loginpost: {
@@ -71,10 +70,9 @@ function Login() {
       setpasswordError(password.length === 0);
       return;
     }
-
     axios({
-      method: "get",
-      url: "https:47.103.210.124:7000/user/login",
+      method: "post",
+      url: "http://47.103.210.124:7000/user/login",
       data: {
         email: username,
         pwd: password,
@@ -85,11 +83,11 @@ function Login() {
   };
 
   const backgroundStyle = {
-    backgroundSize: "cover" ,
+    backgroundSize: "cover",
     width: "100%",
     height: "100%",
     backgroundImage: `url(${LoginBackground})`,
-  }
+  };
 
   const handleRegister = () => {
     console.log("!!!ZHUCE");
@@ -98,50 +96,50 @@ function Login() {
 
   return (
     <div style={backgroundStyle}>
-    <Container> 
-      
-      <Stack
-        sx={{
-          height: "100vh",
-        }}
-        spacing={2}
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Typography variant="h5" sx={{ mb: 6 }}>
-          校园猫咪录
-        </Typography>
-        <TextField
-          error={usernameError}
-          label="用户名（邮箱）"
-          onChange={handleusernameChange}
-          color="primary"
+      <Container>
+        <Stack
           sx={{
-            width: "70%",
-            borderRadius: "16px",
+            height: "100vh",
           }}
-        />
-        <TextField
-          error={passwordError}
-          label="密码"
-          color="primary"
-          onChange={handlepasswordChange}
-          sx={{
-            width: "70%",
-          }}
-        />
-        <Button
-          variant="contained"
-          disableElevation
-          color="primary"
-          onClick={handleClick}
-          sx={{ width: "40%" }}
+          spacing={2}
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Typography variant="h5" sx={{ mb: 6 }}>
+            校园猫咪录
+          </Typography>
+          <TextField
+            error={usernameError}
+            label="用户名（邮箱）"
+            onChange={handleusernameChange}
+            color="primary"
+            sx={{
+              width: "70%",
+              borderRadius: "16px",
+            }}
+          />
+          <TextField
+            error={passwordError}
+            label="密码"
+            type="password"
+            color="primary"
+            onChange={handlepasswordChange}
+            sx={{
+              width: "70%",
+            }}
+          />
+          <Button
+            variant="contained"
+            disableElevation
+            color="primary"
+            onClick={handleClick}
+            sx={{ width: "40%" }}
           >
-          登录
-        </Button>
-        <Button onClick={handleRegister}>没有账号？立即注册</Button>
-      </Stack>
-    </Container>
+            登录
+          </Button>
+          <Button onClick={handleRegister}>没有账号？立即注册</Button>
+        </Stack>
+      </Container>
     </div>
   );
 }

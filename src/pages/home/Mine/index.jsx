@@ -1,9 +1,8 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
-import MaomaoImg from '../../../image/maomao.png'
-import BackgroundImg from '../../../image/backgroundMaomao.png'
-
+import MaomaoImg from "../../../image/maomao.png";
+import BackgroundImg from "../../../image/backgroundMaomao.png";
 
 const HandleClick = () => {
   console.log("跳转至设置页面");
@@ -11,21 +10,47 @@ const HandleClick = () => {
 };
 
 const backgroundStyle = {
-  backgroundSize: "cover" ,
+  backgroundSize: "cover",
   width: "100vw",
   height: "100vh",
   backgroundImage: `url(${BackgroundImg})`,
-}
+};
 
 export default function Mine() {
   return (
-    <div style={backgroundStyle} >
-      <Box>
-      <Avatar
-            src={MaomaoImg }
-            sx={{ width: 96, height: 96, top: 80, marginLeft: '40px'}}
-      />
+    <Box style={backgroundStyle}>
+      <Box
+        sx={{
+          display: "flex",
+          padding: "64px",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+        }}
+      >
+        <Box
+          sx={{
+            m: 0,
+            display: "flex",
+            justifyContent: "center",
+            width: "100%",
+          }}
+        >
+          <Avatar src={MaomaoImg} sx={{ height: "80px", width: "80px" }} />
+        </Box>
+
+        <Box
+          sx={{
+            m: 0,
+            display: "flex",
+            justifyContent: "center",
+            width: "100%",
+          }}
+        >
+          7777
+        </Box>
       </Box>
-    </div>
+    </Box>
   );
 }

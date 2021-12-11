@@ -196,7 +196,7 @@ export default function BasicTabs() {
           暂未开放
         </TabPanel>
       </Box>
-      <Box className="addbtn" onClick={HandleClick} sx={{boxShadow: 0}}>
+      <Box className="addbtn" onClick={HandleClick} sx={{ boxShadow: 0 }}>
         <Addbuttton></Addbuttton>
       </Box>
     </Box>
