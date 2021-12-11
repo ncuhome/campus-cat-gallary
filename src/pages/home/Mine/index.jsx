@@ -23,7 +23,7 @@ export default function Mine() {
       <Box>
       <Avatar
             src={MaomaoImg }
-            sx={{ width: 160, height: 160, top: 80, margin: '0 auto'}}
+            sx={{ width: 96, height: 96, top: 80, marginLeft: '40px'}}
       />
       </Box>
     </div>

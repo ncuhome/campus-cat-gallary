@@ -12,11 +12,16 @@ const theme = createTheme({
   palette: {
     type: "light",
     primary: {
-      main: "rgba(255, 189, 12, 1)",
+      main: "#FF8F1A",
+      Light: "rgb(255,165,71)",
     },
     secondary: {
-      main: "#1aff55",
+      main: "#FFE294",
     },
+    warning: { 
+      main: "#ff9800"
+    }
+    
   },
   shape: {
     borderRadius: 16,
