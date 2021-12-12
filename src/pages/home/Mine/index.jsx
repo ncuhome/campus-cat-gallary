@@ -20,21 +20,26 @@ export default function Mine() {
   return (
     <Box style={backgroundStyle}>
       <Box
+        sx={{ textAlign: "right", paddingRight: "40px", paddingTop: "64px" }}
+      >
+        <icon>88</icon>
+      </Box>
+      <Box
         sx={{
           display: "flex",
-          padding: "64px",
+          paddingLeft: "48px",
           width: "100%",
           display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
+          justifyContent: "left",
+          flexDirection: "row",
         }}
       >
         <Box
           sx={{
             m: 0,
             display: "flex",
-            justifyContent: "center",
-            width: "100%",
+            justifyContent: "left",
+            margin: "16px",
           }}
         >
           <Avatar src={MaomaoImg} sx={{ height: "80px", width: "80px" }} />
@@ -46,9 +51,11 @@ export default function Mine() {
             display: "flex",
             justifyContent: "center",
             width: "100%",
+            flexDirection: "column",
           }}
         >
-          7777
+          <Box>7777</Box>
+          <Box sx={{ color: "#999999" }}>something to say</Box>
         </Box>
       </Box>
     </Box>

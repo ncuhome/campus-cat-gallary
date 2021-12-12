@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
-
 import Home from "./pages/home";
 import Login from "./pages/login/login";
 import Register from "./pages/register/register";
@@ -18,10 +17,9 @@ const theme = createTheme({
     secondary: {
       main: "#FFE294",
     },
-    warning: { 
-      main: "#ff9800"
-    }
-    
+    warning: {
+      main: "#ff9800",
+    },
   },
   shape: {
     borderRadius: 16,
